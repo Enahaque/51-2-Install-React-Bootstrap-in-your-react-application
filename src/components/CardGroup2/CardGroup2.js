@@ -5,7 +5,7 @@ import Card2 from '../Card2/Card2';
 const CardGroup2 = () => {
     const products =[
         {id:1,img:'https://i.ibb.co/sRn8y4q/image100.jpg',name:'laptop-pro',price:25000},
-        {id:2,img:'https://i.ibb.co/sRn8y4q/image100.jpg',name:'laptop-cro',price:30000},
+        {id:2,img:'https://i.ibb.co/RD1vBKq/image101.jpg',name:'laptop-cro',price:30000},
         {id:3,img:'https://i.ibb.co/sRn8y4q/image100.jpg',name:'laptop-bro',price:35000},
     ];
     return (

@@ -3,6 +3,12 @@ import { Spinner } from 'react-bootstrap';
 import { Modal } from 'react-bootstrap';
 import { Dropdown } from 'react-bootstrap';
 import { Toast } from 'react-bootstrap';
+import { Pagination } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
+import { Popover } from 'react-bootstrap';
+import { OverlayTrigger } from 'react-bootstrap';
+
+
 import './App.css';
 import CardGroup2 from './components/CardGroup2/CardGroup2';
 
@@ -79,7 +85,94 @@ function App() {
         </Toast.Header>
         <Toast.Body>Hello, world! This is a toast message.</Toast.Body>
       </Toast>
+      <br />
+      <Pagination>
+        <Pagination.First />
+        <Pagination.Prev />
+        <Pagination.Item>{1}</Pagination.Item>
+        <Pagination.Ellipsis />
+
+        <Pagination.Item>{10}</Pagination.Item>
+        <Pagination.Item>{11}</Pagination.Item>
+
+        <Pagination.Item active>{12}</Pagination.Item>
+        <Pagination.Item>{13}</Pagination.Item>
+        <Pagination.Item disabled>{14}</Pagination.Item>
+
+        <Pagination.Ellipsis />
+        <Pagination.Item>{100}</Pagination.Item>
+        <Pagination.Next />
+        <Pagination.Last />
+      </Pagination>
+      <br />
+      <Carousel>
+        <Carousel.Item>
+          <img
+            className="d-block w-75"
+            src="https://i.ibb.co/RD1vBKq/image101.jpg"
+            alt="First slide"
+          />
+          <Carousel.Caption>
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-75"
+            src="https://i.ibb.co/sRn8y4q/image100.jpg"
+            alt="Second slide"
+          />
+
+          <Carousel.Caption>
+            <h3>Second slide label</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-75"
+            src="https://i.ibb.co/m8Hq1Pw/image102.jpg"
+            alt="Third slide"
+          />
+
+          <Carousel.Caption>
+            <h3>Third slide label</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+      <br />
+      <button type="button" class="btn btn-primary position-relative">
+        Inbox
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          99+
+          <span class="visually-hidden">unread messages</span>
+        </span>
+      </button>
+      <br />
+      <>
+        {['top', 'right', 'bottom', 'left'].map((placement) => (
+          <OverlayTrigger
+            trigger="click"
+            key={placement}
+            placement={placement}
+            overlay={
+              <Popover id={`popover-positioned-${placement}`}>
+                <Popover.Header as="h3">{`Popover ${placement}`}</Popover.Header>
+                <Popover.Body>
+                  <strong>Holy guacamole!</strong> Check this info.
+                </Popover.Body>
+              </Popover>
+            }
+          >
+            <Button variant="secondary">Popover on {placement}</Button>
+          </OverlayTrigger>
+        ))}
+      </>
+      <br/>        
     </div>
+
 
   );
 }
